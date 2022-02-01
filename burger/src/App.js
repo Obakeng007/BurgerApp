@@ -3,7 +3,7 @@ import './App.css';
 
 //styling for the layers
 const burger_top_layer_styling= {
-  backgroundColor: 'brown',
+  backgroundColor: '#f2a93b',
   width: '700px',
   marginTop: '100px',
   marginLeft: '900px',
@@ -13,50 +13,57 @@ const burger_top_layer_styling= {
 }
 
 const tomato_styling={
-  backgroundColor: 'Red',
+  backgroundColor: '#ea3323',
   width: '700px',
-  marginTop: '10px',
+  marginTop: '5px',
   marginLeft: '900px',
-  height: '150px',
+  height: '100px',
   borderRadius: '10px 10px 10px 10px',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontSize: '25px',
+  color: 'White'
 }
 
 const meat_styling={
-  backgroundColor: 'Brown',
+  backgroundColor: '#814133',
   width: '700px',
-  marginTop: 'px',
+  marginTop: '5px',
   marginLeft: '900px',
-  height: '150px',
+  height: '100px',
   borderRadius: '10px 10px 10px 10px',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontSize: '25px',
+  color: 'White'
 }
 
 
 const lettuce_styling={
-  backgroundColor: 'green',
+  backgroundColor: '#377e22',
   width: '700px',
-  marginTop: '650px',
+  marginTop: '5px',
   marginLeft: '900px',
-  height: '150px',
+  height: '100px',
   borderRadius: '10px 10px 10px 10px',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontSize: '25px',
+  color: 'White'
 }
 
-const burger_buttom_layer_styling= {
-  backgroundColor: 'brown',
+const burger_bottom_layer_styling= {
+  backgroundColor: '#f2a93b',
   width: '700px',
-  marginTop: '900px',
+  marginTop: '5px',
   marginLeft: '900px',
   height: '150px',
-  borderRadius: '10px 10px 50px 50px'
+  borderRadius: '10px 10px 50px 50px',
+  textAlign: 'center'
 }
 
 
 //Creating functions
 
  
-  function burger_top(){
+  export function Burger_top(){
     return <div style={ burger_top_layer_styling }></div>
   }
  
@@ -69,24 +76,25 @@ function Meat(){
   return <div style={ meat_styling }>Meat</div>;
 }
 
-function burger(){
-  return(
-    function Lettuce(){
-      return <div style={ lettuce_styling }>Lettuce</div>;
-    }
-  );
 
-    function burger_buttom(){
-      return <div style={ burger_buttom_layer_styling }></div>;
-    }
- 
-
+function Lettuce(){
+  return <div style={ lettuce_styling }>Lettuce</div>;
 }
+
+  
+    function Burger_bottom(){
+      return <div style={ burger_bottom_layer_styling }></div>;
+    }
  
-
-  
-
-
- // Calling the functions 
-export default  burger;
-  
+    //Calling functions
+export default function Burger(){
+  return(
+    <section>
+      <Burger_top/>
+      <Tomato/>
+      <Meat/>
+      <Lettuce/>
+      <Burger_bottom/>
+    </section>
+  );
+}
